@@ -1,0 +1,493 @@
+---
+title: "Sourmash Output Richness and Diversity"
+author: "Bryshal Moore"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install the Neccessay Packages
+```{r}
+#install.packages("vegan")
+
+library(vegan)
+library(ggplot2)
+library(phyloseq)
+library(dplyr)
+library(tidyverse)
+```
+
+## Example Data
+```{r}
+# Example data (replace with your own data)
+data <- matrix(c(10, 5, 3, 2, 1), nrow = 1)
+
+# Calculate Shannon diversity index
+shannon_index <- diversity(data, index = "shannon")
+
+# Print the result
+print(shannon_index)
+```
+## Example Graph
+```{r}
+# Create a bar plot
+barplot(shannon_index, main = "Shannon Diversity Index", 
+        xlab = "Sample", ylab = "Shannon Index", col = "skyblue")
+```
+## Load the SRR606249 metagenomic dataset
+```{r}
+# Load the dataset
+SRR606249.gtdb.data <- read.csv("C:/Users/brysh/Desktop/2024-sourmash-richness-and-diversity/SRR606249.x.gtdb-rs214.with-lineages.csv")
+
+
+```
+
+
+## View the dataset
+```{r}
+# View the dataset
+head(SRR606249.gtdb.data)
+
+# to get the <- use the shotcut ctrl + alt + -
+```
+
+## Seperate the lineage column along the semicolon
+```{r}
+# Seperate the lineage column along the semicolon
+SRR606249.gtdb.data <- separate(SRR606249.gtdb.data, lineage, c("domain", "phylum", "class", "order", "family", "genus", "species"), sep = ";")
+
+head(SRR606249.gtdb.data)
+
+```
+
+## Check the species column for any repeat values
+```{r}
+table(SRR606249.gtdb.data$species)
+
+
+```
+
+
+
+## Add a new column to the dataset call microbe this is a standin for the normal OTU column
+```{r}
+# Number of rows in the dataset
+num_rows <- nrow(SRR606249.gtdb.data)
+
+# Add a new column
+SRR606249.gtdb.data$microbe <- paste("microbe_" , 1:num_rows)
+
+
+
+head(SRR606249.gtdb.data)
+```
+
+# Remove all column except `f_unique_weighted` and microbe
+```{r}
+# Remove all columns except `f_unique_weighted` and microbe
+otu_SRR60 <- SRR606249.gtdb.data %>%
+  select(f_unique_weighted, microbe, species)
+
+head(otu_SRR60)
+```
+
+## Aggregate the dataset by species
+```{r}
+otu_SRR60_agg <- aggregate(f_unique_weighted ~ species, data = otu_SRR60, FUN = sum)
+
+
+head(otu_SRR60_agg)
+
+```
+
+
+## Check the species column for any repeat values
+```{r}
+table(otu_SRR60_agg$species)
+
+
+```
+
+## Add a new column to the dataset call microbe this is a standin for the normal OTU column . . . again
+```{r}
+# Number of rows in the dataset
+num_rows <- nrow(otu_SRR60_agg)
+
+# Add a new column
+otu_SRR60_agg$microbe <- paste("microbe_" , 1:num_rows)
+
+
+
+head(otu_SRR60_agg)
+
+``` 
+
+## Make all rownames microbe and remove the microbe column . . . again
+```{r}
+# Make all rownames SRR606249
+rownames(otu_SRR60_agg) <- otu_SRR60_agg$microbe
+
+
+# Remove the microbe and species column
+otu_SRR60_agg <- otu_SRR60_agg %>%
+  select(-microbe) %>%
+  select(-species)
+
+head(otu_SRR60_agg)
+```
+
+
+## Transpose
+```{r}
+# Transpose the dataset
+otu_SRR60 <- t(otu_SRR60_agg)
+
+head(otu_SRR60)
+```
+
+## Summary of the transposed dataset
+```{r}
+summary(otu_SRR60)
+```
+
+## Multiply every number in the dataset by 100000
+```{r}
+# Multipy every number in the dataset by 100000
+otu_SRR60_multi <- otu_SRR60 * 100000
+
+
+summary(otu_SRR60_multi)
+```
+
+## Convert the dataset to integers
+```{r}
+# Convert the dataset to integers
+otu_SRR60_integer <- apply(otu_SRR60_multi, 2, as.integer)
+
+otu_SRR60_integer <- as.data.frame(otu_SRR60_integer)
+
+otu_SRR60_integer <- t(otu_SRR60_integer)
+
+head(otu_SRR60_integer)
+```
+
+## Calculate the richness and evenness
+```{r}
+# Indices calculation
+
+diversity_richness <- estimateR(otu_SRR60_integer) # to calculate the richness
+diversity_evenness <- diversity(otu_SRR60_integer)/ log(specnumber(otu_SRR60_integer)) # to calculate the evenness)
+```
+
+## Calculate the shannon index
+```{r}
+# Calculate Indices
+
+diverisy_shannon <- diversity(otu_SRR60_integer, index = "shannon") # to calculate the shannon index
+
+```
+
+
+## Combine the data
+```{r}
+# combine the data
+data_alphadiv <- cbind(t(diversity_richness), diverisy_shannon, diversity_evenness)
+
+head(data_alphadiv)
+```
+
+
+# Change the rowname to f_unique_weighted
+```{r}
+rownames(data_alphadiv) <- "f_unique_weighted"
+
+head(data_alphadiv)
+
+```
+
+
+
+The S.obs column is the number of observed species. Observed in terms of Alpha Diversity is the number of species that are present in a sample. It is the simplest measure of species diversity in a sample.
+
+The S.Chao1 is the Chao1 column, it is the estimated number of species in a sample. The Chao1 index is a non-parametric estimator of the number of species in a sample. It is based on the number of rare species in a sample. It differs from Observed in that it takes into account the number of rare species that are not observed. The se.chao1 column is the standard error of the Chao1 index. The se.chao1 column is the standard error of the Chao1 index. 
+
+The S.ace column is the ACE column. It is the estimated number of species in a sample. The ACE index is a non-parametric estimator of the number of species in a sample. The se.ace column is the standard error of the ACE index. The se.ace column is the standard error of the ACE index. ACE differs from  Observed because it takes into account the number of rare species that are not observed. 
+
+
+The diversity_shannon column is the Shannon column. It is the Shannon index. The Shannon index is a measure of the diversity in a sample. 
+
+The diversity_evenness column is the Evenness column. It is the Pielou's evenness index. The Pielou's evenness index is a measure of how evenly the species are distributed in a sample. 
+
+
+
+
+# Remove all column except `n_unique_weigheted_found` and microbe
+```{r}
+# Remove all columns except `n_unique_found` and microbe
+otu_SRR60_nuwf <- SRR606249.gtdb.data %>%
+  select(n_unique_weighted_found, microbe, species)
+
+head(otu_SRR60_nuwf)
+```
+
+## Aggregate the dataset by species
+```{r}
+otu_SRR60_nuwf_agg <- aggregate(n_unique_weighted_found ~ species, data = otu_SRR60_nuwf, FUN = sum)
+
+
+head(otu_SRR60_nuwf_agg)
+
+```
+
+
+## Check the species column for any repeat values
+```{r}
+table(otu_SRR60_nuwf_agg$species)
+
+
+```
+
+## Add a new column to the dataset call microbe this is a standin for the normal OTU column . . . again
+```{r}
+# Number of rows in the dataset
+num_rows_nuwf <- nrow(otu_SRR60_nuwf_agg)
+
+# Add a new column
+otu_SRR60_nuwf_agg$microbe <- paste("microbe_" , 1:num_rows_nuwf)
+
+
+
+head(otu_SRR60_nuwf_agg)
+
+``` 
+
+## Make all rownames microbe and remove the microbe column . . . again
+```{r}
+# Make all rownames SRR606249
+rownames(otu_SRR60_nuwf_agg) <- otu_SRR60_nuwf_agg$microbe
+
+
+# Remove the microbe and species column
+otu_SRR60_nuwf_agg <- otu_SRR60_nuwf_agg %>%
+  select(-microbe) %>%
+  select(-species)
+
+head(otu_SRR60_nuwf_agg)
+```
+
+
+## Transpose
+```{r}
+# Transpose the dataset
+otu_SRR60_nuwf <- t(otu_SRR60_nuwf_agg)
+
+head(otu_SRR60_nuwf)
+```
+
+## Summary of the transposed dataset
+```{r}
+summary(otu_SRR60_nuwf)
+```
+
+
+## Calculate the richness and evenness
+```{r}
+# Indices calculation
+
+diversity_richness.nuwf <- estimateR(otu_SRR60_nuwf) # to calculate the richness
+diversity_evenness.nuwf <- diversity(otu_SRR60_nuwf)/ log(specnumber(otu_SRR60_nuwf)) # to calculate the evenness)
+```
+
+## Calculate the shannon index
+```{r}
+# Calculate Indices
+
+diverisy_shannon.nuwf <- diversity(otu_SRR60_nuwf, index = "shannon") # to calculate the shannon index
+
+```
+
+
+## Combine the data
+```{r}
+# combine the data
+data_alphadiv.nuwf <- cbind(t(diversity_richness.nuwf), diverisy_shannon.nuwf, diversity_evenness.nuwf)
+
+head(data_alphadiv.nuwf)
+
+```
+
+
+
+# Testing the Resuts
+
+## Removing columns from the otu_SRR660_nuwf_agg dataset
+```{r}
+# Remove columns from the otu_SRR60_nuwf_agg dataset
+
+otu_SRR60_5dec <- otu_SRR60_nuwf[, -c(8, 13, 22, 30, 45)]
+
+otu_SRR60_5dec <- as.matrix(otu_SRR60_5dec)
+
+otu_SRR60_5dec <- t(otu_SRR60_5dec)
+
+head(otu_SRR60_5dec)
+
+
+```
+
+## Calculate the richness and evenness
+```{r}
+# Indices calculation
+
+diversity_richness.5dec <- estimateR(otu_SRR60_5dec) # to calculate the richness
+diversity_evenness.5dec <- diversity(otu_SRR60_5dec)/ log(specnumber(otu_SRR60_5dec)) # to calculate the evenness)
+```
+
+## Calculate the shannon index
+```{r}
+# Calculate Indices
+
+diverisy_shannon.5dec <- diversity(otu_SRR60_5dec, index = "shannon") # to calculate the shannon index
+
+```
+
+
+## Combine the data
+```{r}
+# combine the data
+data_alphadiv.5dec <- cbind(t(diversity_richness.5dec), diverisy_shannon.5dec, diversity_evenness.5dec)
+
+head(data_alphadiv.5dec)
+
+```
+
+# Make the row name uni_w_found_5dec
+```{r}
+rownames(data_alphadiv.5dec) <- "uni_w_found_5dec"
+
+head(data_alphadiv.5dec)
+
+```
+
+## Removing columns 5 more from the otu_SRR660_nuwf_agg dataset
+```{r}
+# Remove columns from the otu_SRR60_nuwf_agg dataset
+
+otu_SRR60_10dec <- otu_SRR60_nuwf[, -c(8, 13, 22, 30, 45, 2, 11, 20, 31, 41)]
+
+otu_SRR60_10dec <- as.matrix(otu_SRR60_10dec)
+
+otu_SRR60_10dec <- t(otu_SRR60_10dec)
+
+head(otu_SRR60_10dec)
+
+
+```
+
+
+## Calculate the richness and evenness
+```{r}
+# Indices calculation
+
+diversity_richness.10dec <- estimateR(otu_SRR60_10dec) # to calculate the richness
+diversity_evenness.10dec <- diversity(otu_SRR60_10dec)/ log(specnumber(otu_SRR60_10dec)) # to calculate the evenness)
+```
+
+## Calculate the shannon index
+```{r}
+# Calculate Indices
+
+diverisy_shannon.10dec <- diversity(otu_SRR60_10dec, index = "shannon") # to calculate the shannon index
+
+```
+
+
+## Combine the data
+```{r}
+# combine the data
+data_alphadiv.10dec <- cbind(t(diversity_richness.10dec), diverisy_shannon.10dec, diversity_evenness.10dec)
+
+head(data_alphadiv.10dec)
+
+```
+
+# Make the row name uni_w_found_10dec
+```{r}
+rownames(data_alphadiv.10dec) <- "uni_w_found_10dec"
+
+head(data_alphadiv.10dec)
+
+
+
+```
+
+
+## Removing columns 10 more from the otu_SRR660_nuwf_agg dataset
+```{r}
+# Remove columns from the otu_SRR60_nuwf_agg dataset
+
+otu_SRR60_20dec <- otu_SRR60_nuwf[, -c(8, 13, 22, 30, 45, 2, 11, 20, 31, 41, 2, 3, 4, 7, 15, 10, 24, 18, 19, 21)]
+
+otu_SRR60_20dec <- as.matrix(otu_SRR60_20dec)
+
+otu_SRR60_20dec <- t(otu_SRR60_20dec)
+
+head(otu_SRR60_20dec)
+
+
+```
+
+## Calculate the richness and evenness
+```{r}
+# Indices calculation
+
+diversity_richness.20dec <- estimateR(otu_SRR60_20dec) # to calculate the richness
+diversity_evenness.20dec <- diversity(otu_SRR60_20dec)/ log(specnumber(otu_SRR60_20dec)) # to calculate the evenness)
+```
+
+## Calculate the shannon index
+```{r}
+# Calculate Indices
+
+diverisy_shannon.20dec <- diversity(otu_SRR60_20dec, index = "shannon") # to calculate the shannon index
+
+```
+
+
+## Combine the data
+```{r}
+# combine the data
+data_alphadiv.20dec <- cbind(t(diversity_richness.20dec), diverisy_shannon.20dec, diversity_evenness.20dec)
+
+head(data_alphadiv.20dec)
+
+```
+
+
+
+# Make the row name uni_w_found_20dec
+```{r}
+rownames(data_alphadiv.20dec) <- "uni_w_found_20dec"
+
+head(data_alphadiv.20dec)
+
+```
+
+# Combine the data
+```{r}
+# combine the data
+data_alphadiv_all <- rbind(data_alphadiv, data_alphadiv.nuwf, data_alphadiv.5dec, data_alphadiv.10dec, data_alphadiv.20dec)
+
+head(data_alphadiv_all)
+
+
+```
+
+```{r}
+
+```
