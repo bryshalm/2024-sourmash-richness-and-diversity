@@ -488,6 +488,129 @@ head(data_alphadiv_all)
 
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+## Load the dataset
+```{r}
+# Load the dataset
+genomes_30 <- read.csv("C:/Users/brysh/Desktop/2024-sourmash-richness-and-diversity/S_S001__genomes_30.csv")
+
+```
+
+## View the dataset
+```{r}
+# View the dataset
+head(genomes_30)
+```
+
+```{r}
+# Number of rows in the dataset
+num_rows <- nrow(genomes_30)
+
+# Add a new column
+genomes_30$microbe <- paste("microbe_" , 1:num_rows)
+
+head(genomes_30)
+```
+
+
+
+
+## N unique weighted found
+
+
+# Remove all column except `n_unique_weigheted_found` and microbe
+```{r}
+# Remove all columns except `n_unique_found` and microbe
+genomes_30_nuwf <- genomes_30 %>%
+  select(n_unique_weighted_found, microbe)
+
+head(genomes_30_nuwf)
+```
+
+## Make all rownames microbe and remove the microbe column . . . again
+```{r}
+# Make all rownames SRR606249
+rownames(genomes_30_nuwf) <- genomes_30_nuwf$microbe
+
+
+# Remove the microbe and species column
+genomes_30_nuwf_agg <- genomes_30_nuwf %>%
+  select(-microbe) 
+
+head(genomes_30_nuwf_agg)
+```
+
+## Transpose
+```{r}
+# Transpose the dataset
+genomes_30_nuwf <- t(genomes_30_nuwf_agg)
+
+head(genomes_30_nuwf)
+```
+
+
+## Calculate the richness and evenness
+```{r}
+# Indices calculation
+
+genomes30_richness.nuwf <- estimateR(genomes_30_nuwf) # to calculate the richness
+genomes30_evenness.nuwf <- diversity(genomes_30_nuwf)/ log(specnumber(genomes_30_nuwf)) # to calculate the evenness)
+```
+
+## Calculate the shannon index
+```{r}
+# Calculate Indices
+
+genomes30_shannon.nuwf <- diversity(genomes_30_nuwf, index = "shannon") # to calculate the shannon index
+
+```
+
+
+## Combine the data
+```{r}
+# combine the data
+genomes30_alphadiv.nuwf <- cbind(t(genomes30_richness.nuwf), genomes30_shannon.nuwf, genomes30_evenness.nuwf)
+```
+
+```{r}
+head(genomes30_alphadiv.nuwf)
+
+```
+
+
+## N unique weighted found
+
+# Remove all column except `unique_weighted_found` and microbe
+```{r}
+# Remove all columns except `unique_weighted_found` and microbe
+genomes_30_nuwf <- genomes_30 %>%
+  select(n_unique_weighted_found, microbe)
+
+head(genomes_30_nuwf)
+```
+
+
+# Make the row name uni_w_found_30
 ```{r}
 
+# Make all rownames SRR606249
+rownames(otu_SRR60_nuwf_agg) <- otu_SRR60_nuwf_agg$microbe
+
+
+# Remove the microbe and species column
+otu_SRR60_nuwf_agg <- otu_SRR60_nuwf_agg %>%
+  select(-microbe) %>%
+  select(-species)
+
+head(otu_SRR60_nuwf_agg)
 ```
