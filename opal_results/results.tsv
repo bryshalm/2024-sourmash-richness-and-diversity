@@ -1,0 +1,214 @@
+tool	rank	metric	sample	value
+Gold standard	superkingdom	Bray-Curtis distance		0.0
+Gold standard	phylum	Bray-Curtis distance		0.0
+Gold standard	class	Bray-Curtis distance		0.0
+Gold standard	order	Bray-Curtis distance		0.0
+Gold standard	family	Bray-Curtis distance		0.0
+Gold standard	genus	Bray-Curtis distance		0.0
+Gold standard	species	Bray-Curtis distance		0.0
+Gold standard	strain	Bray-Curtis distance		0.0
+Gold standard	superkingdom	Shannon diversity		0.5329203787255458
+Gold standard	superkingdom	Shannon equitability		0.7688415875760132
+Gold standard	phylum	Shannon diversity		0.828555504341145
+Gold standard	phylum	Shannon equitability		0.46242563166032113
+Gold standard	class	Shannon diversity		0.9692363937349769
+Gold standard	class	Shannon equitability		0.3900494184832526
+Gold standard	order	Shannon diversity		0.9808165454819892
+Gold standard	order	Shannon equitability		0.37165412606818204
+Gold standard	family	Shannon diversity		0.8960174432267071
+Gold standard	family	Shannon equitability		0.32316998047329465
+Gold standard	genus	Shannon diversity		0.9281502749612581
+Gold standard	genus	Shannon equitability		0.3002709567941564
+Gold standard	species	Shannon diversity		1.347290162665647
+Gold standard	species	Shannon equitability		0.4296898893389924
+Gold standard	strain	Shannon diversity		2.0822944121794813
+Gold standard	strain	Shannon equitability		0.5085782059948002
+Gold standard	superkingdom	True positives		2.0
+Gold standard	superkingdom	False negatives		0.0
+Gold standard	superkingdom	False positives		0.0
+Gold standard	superkingdom	Completeness		1.0
+Gold standard	superkingdom	Purity		1.0
+Gold standard	superkingdom	F1 score		1.0
+Gold standard	superkingdom	Jaccard index		1.0
+Gold standard	phylum	True positives		6.0
+Gold standard	phylum	False negatives		0.0
+Gold standard	phylum	False positives		0.0
+Gold standard	phylum	Completeness		1.0
+Gold standard	phylum	Purity		1.0
+Gold standard	phylum	F1 score		1.0
+Gold standard	phylum	Jaccard index		1.0
+Gold standard	class	True positives		12.0
+Gold standard	class	False negatives		0.0
+Gold standard	class	False positives		0.0
+Gold standard	class	Completeness		1.0
+Gold standard	class	Purity		1.0
+Gold standard	class	F1 score		1.0
+Gold standard	class	Jaccard index		1.0
+Gold standard	order	True positives		14.0
+Gold standard	order	False negatives		0.0
+Gold standard	order	False positives		0.0
+Gold standard	order	Completeness		1.0
+Gold standard	order	Purity		1.0
+Gold standard	order	F1 score		1.0
+Gold standard	order	Jaccard index		1.0
+Gold standard	family	True positives		16.0
+Gold standard	family	False negatives		0.0
+Gold standard	family	False positives		0.0
+Gold standard	family	Completeness		1.0
+Gold standard	family	Purity		1.0
+Gold standard	family	F1 score		1.0
+Gold standard	family	Jaccard index		1.0
+Gold standard	genus	True positives		22.0
+Gold standard	genus	False negatives		0.0
+Gold standard	genus	False positives		0.0
+Gold standard	genus	Completeness		1.0
+Gold standard	genus	Purity		1.0
+Gold standard	genus	F1 score		1.0
+Gold standard	genus	Jaccard index		1.0
+Gold standard	species	True positives		23.0
+Gold standard	species	False negatives		0.0
+Gold standard	species	False positives		0.0
+Gold standard	species	Completeness		1.0
+Gold standard	species	Purity		1.0
+Gold standard	species	F1 score		1.0
+Gold standard	species	Jaccard index		1.0
+Gold standard	strain	True positives		60.0
+Gold standard	strain	False negatives		0.0
+Gold standard	strain	False positives		0.0
+Gold standard	strain	Completeness		1.0
+Gold standard	strain	Purity		1.0
+Gold standard	strain	F1 score		1.0
+Gold standard	strain	Jaccard index		1.0
+Gold standard	superkingdom	L1 norm error		0.0
+Gold standard	phylum	L1 norm error		0.0
+Gold standard	class	L1 norm error		0.0
+Gold standard	order	L1 norm error		0.0
+Gold standard	family	L1 norm error		0.0
+Gold standard	genus	L1 norm error		0.0
+Gold standard	species	L1 norm error		0.0
+Gold standard	strain	L1 norm error		0.0
+Gold standard	na	Weighted UniFrac error		0.0
+Gold standard	na	Unweighted UniFrac error		0.0
+Gold standard	na	Weighted UniFrac (CAMI)		0.0
+Gold standard	na	Unweighted UniFrac (CAMI)		0.0
+Gold standard	superkingdom	Sum of abundances		0.349178
+Gold standard	phylum	Sum of abundances		0.285714
+Gold standard	class	Sum of abundances		0.285714
+Gold standard	order	Sum of abundances		0.2857130000000001
+Gold standard	family	Sum of abundances		0.26074200000000003
+Gold standard	genus	Sum of abundances		0.26074500000000006
+Gold standard	species	Sum of abundances		0.892716
+Gold standard	strain	Sum of abundances		1.000006
+Gold standard	superkingdom	Taxon counts		2.0
+Gold standard	phylum	Taxon counts		6.0
+Gold standard	class	Taxon counts		12.0
+Gold standard	order	Taxon counts		14.0
+Gold standard	family	Taxon counts		16.0
+Gold standard	genus	Taxon counts		22.0
+Gold standard	species	Taxon counts		23.0
+Gold standard	strain	Taxon counts		60.0
+sourmash	superkingdom	Bray-Curtis distance		0.9081912027498921
+sourmash	phylum	Bray-Curtis distance		0.8889307602292785
+sourmash	class	Bray-Curtis distance		0.888306555546009
+sourmash	order	Bray-Curtis distance		0.965632672753649
+sourmash	family	Bray-Curtis distance		0.9963982394594477
+sourmash	genus	Bray-Curtis distance		1.0
+sourmash	species	Bray-Curtis distance		1.0
+sourmash	strain	Bray-Curtis distance		1.0
+sourmash	superkingdom	Shannon diversity		0.06865112339522512
+sourmash	superkingdom	Shannon equitability		0.0
+sourmash	phylum	Shannon diversity		0.08118600601631362
+sourmash	phylum	Shannon equitability		0.07389868732921108
+sourmash	class	Shannon diversity		0.08365953894977826
+sourmash	class	Shannon equitability		0.051980594158647773
+sourmash	order	Shannon diversity		0.08872784523579375
+sourmash	order	Shannon equitability		0.04266907410348103
+sourmash	family	Shannon diversity		0.08872784523579375
+sourmash	family	Shannon equitability		0.04266907410348103
+sourmash	genus	Shannon diversity		0.08872784523579375
+sourmash	genus	Shannon equitability		0.04266907410348103
+sourmash	species	Shannon diversity		0.08975770098472667
+sourmash	species	Shannon equitability		0.04085049016407026
+sourmash	strain	Shannon diversity		0.09106640337754854
+sourmash	strain	Shannon equitability		0.03797763997894413
+sourmash	superkingdom	True positives		1.0
+sourmash	superkingdom	False negatives		1.0
+sourmash	superkingdom	False positives		0.0
+sourmash	superkingdom	Completeness		0.5
+sourmash	superkingdom	Purity		1.0
+sourmash	superkingdom	F1 score		0.6666666666666666
+sourmash	superkingdom	Jaccard index		0.5
+sourmash	phylum	True positives		3.0
+sourmash	phylum	False negatives		3.0
+sourmash	phylum	False positives		0.0
+sourmash	phylum	Completeness		0.5
+sourmash	phylum	Purity		1.0
+sourmash	phylum	F1 score		0.6666666666666666
+sourmash	phylum	Jaccard index		0.5
+sourmash	class	True positives		5.0
+sourmash	class	False negatives		7.0
+sourmash	class	False positives		0.0
+sourmash	class	Completeness		0.4166666666666667
+sourmash	class	Purity		1.0
+sourmash	class	F1 score		0.5882352941176471
+sourmash	class	Jaccard index		0.4166666666666667
+sourmash	order	True positives		5.0
+sourmash	order	False negatives		9.0
+sourmash	order	False positives		3.0
+sourmash	order	Completeness		0.35714285714285715
+sourmash	order	Purity		0.625
+sourmash	order	F1 score		0.45454545454545453
+sourmash	order	Jaccard index		0.29411764705882354
+sourmash	family	True positives		1.0
+sourmash	family	False negatives		15.0
+sourmash	family	False positives		7.0
+sourmash	family	Completeness		0.0625
+sourmash	family	Purity		0.125
+sourmash	family	F1 score		0.08333333333333333
+sourmash	family	Jaccard index		0.043478260869565216
+sourmash	genus	True positives		0.0
+sourmash	genus	False negatives		22.0
+sourmash	genus	False positives		8.0
+sourmash	genus	Completeness		0.0
+sourmash	genus	Purity		0.0
+sourmash	genus	Jaccard index		0.0
+sourmash	species	True positives		0.0
+sourmash	species	False negatives		23.0
+sourmash	species	False positives		9.0
+sourmash	species	Completeness		0.0
+sourmash	species	Purity		0.0
+sourmash	species	Jaccard index		0.0
+sourmash	strain	True positives		0.0
+sourmash	strain	False negatives		60.0
+sourmash	strain	False positives		11.0
+sourmash	strain	Completeness		0.0
+sourmash	strain	Purity		0.0
+sourmash	strain	Jaccard index		0.0
+sourmash	superkingdom	L1 norm error		0.332378
+sourmash	phylum	L1 norm error		0.268914
+sourmash	class	L1 norm error		0.268814
+sourmash	order	L1 norm error		0.29221300000000006
+sourmash	family	L1 norm error		0.276642
+sourmash	genus	L1 norm error		0.27764500000000003
+sourmash	species	L1 norm error		0.9096159999999998
+sourmash	strain	L1 norm error		1.016906
+sourmash	na	Weighted UniFrac error		0.039526155047619034
+sourmash	na	Unweighted UniFrac error		0.8543184150212013
+sourmash	na	Weighted UniFrac (CAMI)		14.640456285714277
+sourmash	na	Unweighted UniFrac (CAMI)		509.01186376190475
+sourmash	superkingdom	Sum of abundances		0.0168
+sourmash	phylum	Sum of abundances		0.0168
+sourmash	class	Sum of abundances		0.0169
+sourmash	order	Sum of abundances		0.0169
+sourmash	family	Sum of abundances		0.0169
+sourmash	genus	Sum of abundances		0.0169
+sourmash	species	Sum of abundances		0.0169
+sourmash	strain	Sum of abundances		0.016900000000000002
+sourmash	superkingdom	Taxon counts		1.0
+sourmash	phylum	Taxon counts		3.0
+sourmash	class	Taxon counts		5.0
+sourmash	order	Taxon counts		8.0
+sourmash	family	Taxon counts		8.0
+sourmash	genus	Taxon counts		8.0
+sourmash	species	Taxon counts		9.0
+sourmash	strain	Taxon counts		11.0

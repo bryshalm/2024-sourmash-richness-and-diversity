@@ -1,0 +1,2 @@
+tool	sample	Sum of abundances	Weighted UniFrac error	Unweighted UniFrac error	L1 norm error	Completeness	Purity	F1 score	True positives	False positives	False negatives	Taxon counts	Jaccard index	Shannon diversity	Shannon equitability	Bray-Curtis distance
+low_complex.bioboxes.profile		0.0169	0.10580849680952381	0.8529227614934651	0.9830999999999999	0.4166666666666667	1.0	0.5882352941176471	5.0	0.0	7.0	5.0	0.4166666666666667	0.08365953894977826	0.051980594158647773	0.9667617268167961

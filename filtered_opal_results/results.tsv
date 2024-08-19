@@ -1,0 +1,214 @@
+tool	rank	metric	sample	value
+Gold standard	superkingdom	Bray-Curtis distance		0.0
+Gold standard	phylum	Bray-Curtis distance		0.0
+Gold standard	class	Bray-Curtis distance		0.0
+Gold standard	order	Bray-Curtis distance		0.0
+Gold standard	family	Bray-Curtis distance		0.0
+Gold standard	genus	Bray-Curtis distance		0.0
+Gold standard	species	Bray-Curtis distance		0.0
+Gold standard	strain	Bray-Curtis distance		0.0
+Gold standard	superkingdom	Shannon diversity		0.0
+Gold standard	superkingdom	Shannon equitability		0.0
+Gold standard	phylum	Shannon diversity		1.6471836063136192
+Gold standard	phylum	Shannon equitability		0.919310674564637
+Gold standard	class	Shannon diversity		2.1395632925724404
+Gold standard	class	Shannon equitability		0.8610236093798441
+Gold standard	order	Shannon diversity		2.1801009919148604
+Gold standard	order	Shannon equitability		0.8260908042617975
+Gold standard	family	Shannon diversity		1.9927763919576627
+Gold standard	family	Shannon equitability		0.7187421545694803
+Gold standard	genus	Shannon diversity		2.105191467482552
+Gold standard	genus	Shannon equitability		0.6810619715673366
+Gold standard	species	Shannon diversity		1.9335181753016382
+Gold standard	species	Shannon equitability		0.6350809412156768
+Gold standard	strain	Shannon diversity		2.8200649880404547
+Gold standard	strain	Shannon equitability		0.7644774038076639
+Gold standard	superkingdom	True positives		1.0
+Gold standard	superkingdom	False negatives		0.0
+Gold standard	superkingdom	False positives		0.0
+Gold standard	superkingdom	Completeness		1.0
+Gold standard	superkingdom	Purity		1.0
+Gold standard	superkingdom	F1 score		1.0
+Gold standard	superkingdom	Jaccard index		1.0
+Gold standard	phylum	True positives		6.0
+Gold standard	phylum	False negatives		0.0
+Gold standard	phylum	False positives		0.0
+Gold standard	phylum	Completeness		1.0
+Gold standard	phylum	Purity		1.0
+Gold standard	phylum	F1 score		1.0
+Gold standard	phylum	Jaccard index		1.0
+Gold standard	class	True positives		12.0
+Gold standard	class	False negatives		0.0
+Gold standard	class	False positives		0.0
+Gold standard	class	Completeness		1.0
+Gold standard	class	Purity		1.0
+Gold standard	class	F1 score		1.0
+Gold standard	class	Jaccard index		1.0
+Gold standard	order	True positives		14.0
+Gold standard	order	False negatives		0.0
+Gold standard	order	False positives		0.0
+Gold standard	order	Completeness		1.0
+Gold standard	order	Purity		1.0
+Gold standard	order	F1 score		1.0
+Gold standard	order	Jaccard index		1.0
+Gold standard	family	True positives		16.0
+Gold standard	family	False negatives		0.0
+Gold standard	family	False positives		0.0
+Gold standard	family	Completeness		1.0
+Gold standard	family	Purity		1.0
+Gold standard	family	F1 score		1.0
+Gold standard	family	Jaccard index		1.0
+Gold standard	genus	True positives		22.0
+Gold standard	genus	False negatives		0.0
+Gold standard	genus	False positives		0.0
+Gold standard	genus	Completeness		1.0
+Gold standard	genus	Purity		1.0
+Gold standard	genus	F1 score		1.0
+Gold standard	genus	Jaccard index		1.0
+Gold standard	species	True positives		21.0
+Gold standard	species	False negatives		0.0
+Gold standard	species	False positives		0.0
+Gold standard	species	Completeness		1.0
+Gold standard	species	Purity		1.0
+Gold standard	species	F1 score		1.0
+Gold standard	species	Jaccard index		1.0
+Gold standard	strain	True positives		40.0
+Gold standard	strain	False negatives		0.0
+Gold standard	strain	False positives		0.0
+Gold standard	strain	Completeness		1.0
+Gold standard	strain	Purity		1.0
+Gold standard	strain	F1 score		1.0
+Gold standard	strain	Jaccard index		1.0
+Gold standard	superkingdom	L1 norm error		0.0
+Gold standard	phylum	L1 norm error		0.0
+Gold standard	class	L1 norm error		0.0
+Gold standard	order	L1 norm error		0.0
+Gold standard	family	L1 norm error		0.0
+Gold standard	genus	L1 norm error		0.0
+Gold standard	species	L1 norm error		0.0
+Gold standard	strain	L1 norm error		0.0
+Gold standard	na	Weighted UniFrac error		0.0
+Gold standard	na	Unweighted UniFrac error		0.0
+Gold standard	na	Weighted UniFrac (CAMI)		0.0
+Gold standard	na	Unweighted UniFrac (CAMI)		0.0
+Gold standard	superkingdom	Sum of abundances		1.0
+Gold standard	phylum	Sum of abundances		0.9999990000000001
+Gold standard	class	Sum of abundances		1.0
+Gold standard	order	Sum of abundances		0.999999
+Gold standard	family	Sum of abundances		0.912596
+Gold standard	genus	Sum of abundances		0.9125970000000001
+Gold standard	species	Sum of abundances		0.846623
+Gold standard	strain	Sum of abundances		0.9999990000000001
+Gold standard	superkingdom	Taxon counts		1.0
+Gold standard	phylum	Taxon counts		6.0
+Gold standard	class	Taxon counts		12.0
+Gold standard	order	Taxon counts		14.0
+Gold standard	family	Taxon counts		16.0
+Gold standard	genus	Taxon counts		22.0
+Gold standard	species	Taxon counts		21.0
+Gold standard	strain	Taxon counts		40.0
+low_complex.bioboxes.profile	superkingdom	Bray-Curtis distance		0.9669551534225018
+low_complex.bioboxes.profile	phylum	Bray-Curtis distance		0.9669551209236044
+low_complex.bioboxes.profile	class	Bray-Curtis distance		0.9667617268167961
+low_complex.bioboxes.profile	order	Bray-Curtis distance		0.9897728289633485
+low_complex.bioboxes.profile	family	Bray-Curtis distance		0.9989241481404977
+low_complex.bioboxes.profile	genus	Bray-Curtis distance		1.0
+low_complex.bioboxes.profile	species	Bray-Curtis distance		1.0
+low_complex.bioboxes.profile	strain	Bray-Curtis distance		1.0
+low_complex.bioboxes.profile	superkingdom	Shannon diversity		0.06865112339522512
+low_complex.bioboxes.profile	superkingdom	Shannon equitability		0.0
+low_complex.bioboxes.profile	phylum	Shannon diversity		0.08118600601631362
+low_complex.bioboxes.profile	phylum	Shannon equitability		0.07389868732921108
+low_complex.bioboxes.profile	class	Shannon diversity		0.08365953894977826
+low_complex.bioboxes.profile	class	Shannon equitability		0.051980594158647773
+low_complex.bioboxes.profile	order	Shannon diversity		0.08872784523579375
+low_complex.bioboxes.profile	order	Shannon equitability		0.04266907410348103
+low_complex.bioboxes.profile	family	Shannon diversity		0.08872784523579375
+low_complex.bioboxes.profile	family	Shannon equitability		0.04266907410348103
+low_complex.bioboxes.profile	genus	Shannon diversity		0.08872784523579375
+low_complex.bioboxes.profile	genus	Shannon equitability		0.04266907410348103
+low_complex.bioboxes.profile	species	Shannon diversity		0.08975770098472667
+low_complex.bioboxes.profile	species	Shannon equitability		0.04085049016407026
+low_complex.bioboxes.profile	strain	Shannon diversity		0.09106640337754854
+low_complex.bioboxes.profile	strain	Shannon equitability		0.03797763997894413
+low_complex.bioboxes.profile	superkingdom	True positives		1.0
+low_complex.bioboxes.profile	superkingdom	False negatives		0.0
+low_complex.bioboxes.profile	superkingdom	False positives		0.0
+low_complex.bioboxes.profile	superkingdom	Completeness		1.0
+low_complex.bioboxes.profile	superkingdom	Purity		1.0
+low_complex.bioboxes.profile	superkingdom	F1 score		1.0
+low_complex.bioboxes.profile	superkingdom	Jaccard index		1.0
+low_complex.bioboxes.profile	phylum	True positives		3.0
+low_complex.bioboxes.profile	phylum	False negatives		3.0
+low_complex.bioboxes.profile	phylum	False positives		0.0
+low_complex.bioboxes.profile	phylum	Completeness		0.5
+low_complex.bioboxes.profile	phylum	Purity		1.0
+low_complex.bioboxes.profile	phylum	F1 score		0.6666666666666666
+low_complex.bioboxes.profile	phylum	Jaccard index		0.5
+low_complex.bioboxes.profile	class	True positives		5.0
+low_complex.bioboxes.profile	class	False negatives		7.0
+low_complex.bioboxes.profile	class	False positives		0.0
+low_complex.bioboxes.profile	class	Completeness		0.4166666666666667
+low_complex.bioboxes.profile	class	Purity		1.0
+low_complex.bioboxes.profile	class	F1 score		0.5882352941176471
+low_complex.bioboxes.profile	class	Jaccard index		0.4166666666666667
+low_complex.bioboxes.profile	order	True positives		5.0
+low_complex.bioboxes.profile	order	False negatives		9.0
+low_complex.bioboxes.profile	order	False positives		3.0
+low_complex.bioboxes.profile	order	Completeness		0.35714285714285715
+low_complex.bioboxes.profile	order	Purity		0.625
+low_complex.bioboxes.profile	order	F1 score		0.45454545454545453
+low_complex.bioboxes.profile	order	Jaccard index		0.29411764705882354
+low_complex.bioboxes.profile	family	True positives		1.0
+low_complex.bioboxes.profile	family	False negatives		15.0
+low_complex.bioboxes.profile	family	False positives		7.0
+low_complex.bioboxes.profile	family	Completeness		0.0625
+low_complex.bioboxes.profile	family	Purity		0.125
+low_complex.bioboxes.profile	family	F1 score		0.08333333333333333
+low_complex.bioboxes.profile	family	Jaccard index		0.043478260869565216
+low_complex.bioboxes.profile	genus	True positives		0.0
+low_complex.bioboxes.profile	genus	False negatives		22.0
+low_complex.bioboxes.profile	genus	False positives		8.0
+low_complex.bioboxes.profile	genus	Completeness		0.0
+low_complex.bioboxes.profile	genus	Purity		0.0
+low_complex.bioboxes.profile	genus	Jaccard index		0.0
+low_complex.bioboxes.profile	species	True positives		0.0
+low_complex.bioboxes.profile	species	False negatives		21.0
+low_complex.bioboxes.profile	species	False positives		9.0
+low_complex.bioboxes.profile	species	Completeness		0.0
+low_complex.bioboxes.profile	species	Purity		0.0
+low_complex.bioboxes.profile	species	Jaccard index		0.0
+low_complex.bioboxes.profile	strain	True positives		0.0
+low_complex.bioboxes.profile	strain	False negatives		40.0
+low_complex.bioboxes.profile	strain	False positives		11.0
+low_complex.bioboxes.profile	strain	Completeness		0.0
+low_complex.bioboxes.profile	strain	Purity		0.0
+low_complex.bioboxes.profile	strain	Jaccard index		0.0
+low_complex.bioboxes.profile	superkingdom	L1 norm error		0.9832
+low_complex.bioboxes.profile	phylum	L1 norm error		0.983199
+low_complex.bioboxes.profile	class	L1 norm error		0.9830999999999999
+low_complex.bioboxes.profile	order	L1 norm error		1.006499
+low_complex.bioboxes.profile	family	L1 norm error		0.9284960000000001
+low_complex.bioboxes.profile	genus	L1 norm error		0.9294969999999999
+low_complex.bioboxes.profile	species	L1 norm error		0.8635230000000002
+low_complex.bioboxes.profile	strain	L1 norm error		1.016899
+low_complex.bioboxes.profile	na	Weighted UniFrac error		0.10580849680952381
+low_complex.bioboxes.profile	na	Unweighted UniFrac error		0.8529227614934651
+low_complex.bioboxes.profile	na	Weighted UniFrac (CAMI)		12.011934190476195
+low_complex.bioboxes.profile	na	Unweighted UniFrac (CAMI)		357.01189176190474
+low_complex.bioboxes.profile	superkingdom	Sum of abundances		0.0168
+low_complex.bioboxes.profile	phylum	Sum of abundances		0.0168
+low_complex.bioboxes.profile	class	Sum of abundances		0.0169
+low_complex.bioboxes.profile	order	Sum of abundances		0.0169
+low_complex.bioboxes.profile	family	Sum of abundances		0.0169
+low_complex.bioboxes.profile	genus	Sum of abundances		0.0169
+low_complex.bioboxes.profile	species	Sum of abundances		0.0169
+low_complex.bioboxes.profile	strain	Sum of abundances		0.016900000000000002
+low_complex.bioboxes.profile	superkingdom	Taxon counts		1.0
+low_complex.bioboxes.profile	phylum	Taxon counts		3.0
+low_complex.bioboxes.profile	class	Taxon counts		5.0
+low_complex.bioboxes.profile	order	Taxon counts		8.0
+low_complex.bioboxes.profile	family	Taxon counts		8.0
+low_complex.bioboxes.profile	genus	Taxon counts		8.0
+low_complex.bioboxes.profile	species	Taxon counts		9.0
+low_complex.bioboxes.profile	strain	Taxon counts		11.0

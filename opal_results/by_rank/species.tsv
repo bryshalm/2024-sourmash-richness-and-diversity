@@ -1,0 +1,2 @@
+tool	sample	Sum of abundances	Weighted UniFrac error	Unweighted UniFrac error	L1 norm error	Completeness	Purity	F1 score	True positives	False positives	False negatives	Taxon counts	Jaccard index	Shannon diversity	Shannon equitability	Bray-Curtis distance
+sourmash		0.0169	0.039526155047619034	0.8543184150212013	0.9096159999999998	0.0	0.0	na	0.0	9.0	23.0	9.0	0.0	0.08975770098472667	0.04085049016407026	1.0
